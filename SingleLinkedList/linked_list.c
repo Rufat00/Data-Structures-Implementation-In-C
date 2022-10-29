@@ -6,11 +6,13 @@ struct node
     struct node *next;
 };
 
-struct node *add_node(struct node *head, int value)
+struct node *add_node(struct node **head, int value)
 {
     struct node *new_node = malloc(sizeof(struct node));
     new_node->value = value;
-    new_node->next = head;
+    new_node->next = *head;
+
+    *head = new_node;
 
     return new_node;
 };

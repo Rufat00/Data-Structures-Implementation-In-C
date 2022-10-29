@@ -10,7 +10,10 @@ void func(struct node node)
 int main()
 {
     struct node *head = NULL;
-    head = add_node(head, 2);
+    add_node(&head, 2);
+    add_node(&head, 16);
+    add_node(&head, 98);
+    add_node(&head, 53);
 
     loop(head, func);
 
